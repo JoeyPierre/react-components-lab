@@ -1,15 +1,22 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import WeatherForecast from "./WeatherForecast";
+import { weatherForecasts } from "./data";
+import "./App.css";
+import "./WeatherForecast.css";
 
-// src/App.jsx
+
 
 const App = () => {
 
   return (
-    <h1>Hello world!</h1>
+    <>
+      <h1>Local Weather</h1>
+      <section>
+        {weatherForecasts.map((forecast, i) => (
+          <WeatherForecast key={i} forecast={forecast}/>
+        ))}
+      </section>
+    </>
   );
-}
+};
 
-export default App
+export default App;
